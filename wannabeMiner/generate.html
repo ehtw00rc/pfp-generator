@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>wannabeMiners - Playground</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <!-- Site Header -->
+        <header class="header macos-header">
+            <div class="container">
+                <div class="row">
+                    <div class="column column-33">
+                        <div class="site-branding">
+                            <a href="/index.html" title="MineWorker">
+                                <img src="img/logo.png" alt="MineWorker Logo">
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="column column-67">
+                        <nav class="site-nav">
+                            <ul class="menu">
+                                <li>
+                                    <a href="/index.html" class="button macos-button center-text">Go Back</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Site Page -->
+        <div class="page">
+            <div class="container">
+                <div class="row">
+                    <div class="column">
+                        <div class="page-header">
+                            <h3 class="text-bold">Custom wannabeMiner PFP Generator</h3>
+                            <p class="lead">Use this tool to build your own Mine Worker PFP by
+                                mixing and matching different attributes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-content" style="position:relative">
+                    <blockquote>
+                        <h5>Instructions</h5>
+                        <p>Select attributes from the options below. Once you have your Mine Worker complete, click on the
+                            generate button to generate and click download to download your custom wannabeMiner PFP.</p>
+                    </blockquote>
+
+                    <div class="clear clear-32"></div>
+
+                    <div class="row">
+                        <div class="column column-33 sm-w-100">
+                            <div style="position:sticky;top:20px;">
+                                <div id="js-image-container" class="image-container">
+                                    <div class="image-layer">
+                                        <img id="js-type" data-att="Type" data-name="" src="">
+                                    </div>
+                                    <div class="image-layer">
+                                        <img id="js-tone" data-att="Tone" data-name="" src="">
+                                    </div>
+                                    <div class="image-layer">
+                                        <img id="js-blemish" data-att="Blemishes" data-name="" src="">
+                                    </div>
+                                    <div class="image-layer">
+                                        <img id="js-mouth" data-att="Mouth" data-name="" src="">
+                                    </div>
+                                    <div class="image-layer">
+                                        <img id="js-beard" data-att="Beard" data-name="" src="">
+                                    </div>
+                                    <div class="image-layer">
+                                        <img id="js-hair" data-att="Hair" data-name="" src="">
+                                    </div>
+                                    <div class="image-layer">
+                                        <img id="js-eyes" data-att="Eyes" data-name="" src="">
+                                    </div>
+                                    <div class="image-layer">
+                                        <img id="js-prop" data-att="Prop" data-name="" src="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Options -->
+                        <div id="customizer-options" class="column column-67 sm-w-100">
+                            <!-- Type -->
+                            <h6 class="attribute-header" onclick="toggleSection('type-section')">Select a Type</h6>
+                            <div id="type-section" class="attribute-section">
+                                <div id="js-type-options" class="bird-options">
+                                    <a href="/img/attributes/Type/male.png" class="bird-options-att macos-button">
+                                        <img src="/img/attributes/Type/male.png" data-name="Male">
+                                        <span>Male</span>
+                                    </a>
+                                    <a href="/img/attributes/Type/female.png" class="bird-options-att macos-button">
+                                        <img src="/img/attributes/Type/female.png" data-name="Female">
+                                        <span>Female</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Skin Tone -->
+                            <h6 id="js-tone-header" class="attribute-header" onclick="toggleSection('tone-section')">
+                                <div class="clear clear-32"></div>Select a Skin Tone
+                            </h6>
+                            <div id="tone-section" class="attribute-section">
+                                <div id="js-tone-options" class="bird-options">
+                                    <a href="#" class="bird-options-att macos-button">
+                                        <span class="color" data-name="Albino" style="background:#ead9d9"></span>
+                                        <span>Albino</span>
+                                    </a>
+                                    <a href="#" class="bird-options-att macos-button">
+                                        <span class="color" data-name="Light" style="background:#dbb180"></span>
+                                        <span>Light</span>
+                                    </a>
+                                    <a href="#" class="bird-options-att macos-button">
+                                        <span class="color" data-name="Mid" style="background:#ae8b61"></span>
+                                        <span>Mid</span>
+                                    </a>
+                                    <a href="#" class="bird-options-att macos-button">
+                                        <span class="color" data-name="Dark" style="background:#713f1d"></span>
+                                        <span>Dark</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="clear clear-32"></div>
+                            <!-- Hair -->
+                            <div id="js-hair-options" class="bird-options">
+                                <h6 class="attribute-header" onclick="toggleSection('male-hair-section')">Male Hair Attribute</h6>
+                                <div id="male-hair-section" class="attribute-section">
+                                    <div id="js-male-hair-options" class="bird-options">
+                                        <a href="/img/attributes/Male-Hair/knitted-cap.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Male-Hair/knitted-cap.png" data-name="Knitted Cap">
+                                            <span>Knitted Cap</span>
+                                        </a>
+                                        <a href="/img/attributes/none.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/none.png" data-name="None" class="is-active">
+                                            <span>None</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="clear clear-32"></div>
+                                <h6 class="attribute-header" onclick="toggleSection('female-hair-section')">Female Hair Attribute</h6>
+                                <div id="female-hair-section" class="attribute-section">
+                                    <div id="js-female-hair-options" class="bird-options">
+                                        <a href="/img/attributes/Female-Hair/knitted-cap.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Female-Hair/knitted-cap.png" data-name="Knitted Cap">
+                                            <span>Knitted Cap</span>
+                                        </a>
+                                        <a href="/img/attributes/none.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/none.png" data-name="None" class="is-active">
+                                            <span>None</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="clear clear-32"></div>
+                            <!-- Eyes -->
+                            <h6 class="attribute-header" onclick="toggleSection('male-eye-section')">Male Eye Attributes</h6>
+                            <div id="js-eye-options" class="bird-options">
+                                <!-- Male Eyes -->
+                                <div id="male-eye-section" class="attribute-section">
+                                    <div id="js-male-eye-options" class="bird-options">
+                                        <a href="/img/attributes/Male-Eyes/3d-glasses.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Male-Eyes/3d-glasses.png" data-name="3D Glasses">
+                                            <span>3D</span>
+                                        </a>
+                                        <a href="/img/attributes/Male-Eyes/eye-patch.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Male-Eyes/eye-patch.png" data-name="Eye Patch">
+                                            <span>Eye Patch</span>
+                                        </a>
+                                        <a href="/img/attributes/Male-Eyes/regular-shades.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Male-Eyes/regular-shades.png" data-name="Regular Shades">
+                                            <span>Regular Shades</span>
+                                        </a>
+                                        <a href="/img/attributes/Male-Eyes/vr.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Male-Eyes/vr.png" data-name="VR">
+                                            <span>VR</span>
+                                        </a>
+                                        <a href="/img/attributes/none.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/none.png" data-name="None" class="is-active">
+                                            <span>None</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="clear clear-32"></div>
+                                <h6 class="attribute-header" onclick="toggleSection('female-eye-section')">Female Eye Attributes</h6>
+                                <!-- Female Eyes -->
+                                <div id="female-eye-section" class="attribute-section">
+                                    <div id="js-female-eye-options" class="bird-options">
+                                        <a href="/img/attributes/Female-Eyes/3d-glasses.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Female-Eyes/3d-glasses.png" data-name="3D Glasses">
+                                            <span>3D</span>
+                                        </a>
+                                        <a href="/img/attributes/Female-Eyes/eye-patch.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Female-Eyes/eye-patch.png" data-name="Eye Patch">
+                                            <span>Eye Patch</span>
+                                        </a>
+                                        <a href="/img/attributes/Female-Eyes/regular-shades.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Female-Eyes/regular-shades.png" data-name="Regular Shades">
+                                            <span>Regular Shades</span>
+                                        </a>
+                                        <a href="/img/attributes/Female-Eyes/vr.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Female-Eyes/vr.png" data-name="VR">
+                                            <span>VR</span>
+                                        </a>
+                                        <a href="/img/attributes/Female-Eyes/welding-goggles.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Female-Eyes/welding-goggles.png" data-name="Welding Goggles">
+                                            <span>Welding Goggles</span>
+                                        </a>
+                                        <a href="/img/attributes/none.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/none.png" data-name="None" class="is-active">
+                                            <span>None</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="clear clear-32"></div>
+                            <!-- Mouth -->
+                            <h6 class="attribute-header" onclick="toggleSection('mouth-section')">Select a Mouth Attribute</h6>
+                            <div id="mouth-section" class="attribute-section">
+                                <div id="js-mouth-options" class="bird-options">
+                                    <div id="js-male-mouth-options" class="bird-options">
+                                        <a href="/img/attributes/Mouth/frown.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Mouth/frown.png" data-name="Frown">
+                                            <span>Frown M</span>
+                                        </a>
+                                        <a href="/img/attributes/Mouth/smile.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Mouth/smile.png" data-name="Smile">
+                                            <span>Smile M</span>
+                                        </a>
+                                    </div>
+                                    <a href="/img/attributes/none.png" class="bird-options-att macos-button">
+                                        <img src="/img/attributes/none.png" data-name="None" class="is-active">
+                                        <span>None</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="clear clear-32"></div>
+                            <!-- Blemishes -->
+                            <h6 class="attribute-header" onclick="toggleSection('blemish-section')">Select a Blemish Attribute</h6>
+                            <div id="blemish-section" class="attribute-section">
+                                <div id="js-blemish-options" class="bird-options">
+                                    <div id="js-male-blemish-options" class="bird-options">
+                                        <a href="/img/attributes/Blemishes/mole.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Blemishes/mole.png" data-name="Mole">
+                                            <span>Mole M</span>
+                                        </a>
+                                        <a href="/img/attributes/Blemishes/rosy-cheeks.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Blemishes/rosy-cheeks.png" data-name="Rosy Cheeks">
+                                            <span>Rosy Cheeks M</span>
+                                        </a>
+                                    </div>
+                                    <div id="js-female-blemish-options" class="bird-options">
+                                        <a href="/img/attributes/Blemishes/mole-female.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Blemishes/mole-female.png" data-name="Mole">
+                                            <span>Mole F</span>
+                                        </a>
+                                        <a href="/img/attributes/Blemishes/rosy-cheeks-female.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Blemishes/rosy-cheeks-female.png" data-name="Rosy Cheeks">
+                                            <span>Rosy Cheeks F</span>
+                                        </a>
+                                    </div>
+                                    <a href="/img/attributes/none.png" class="bird-options-att macos-button">
+                                        <img src="/img/attributes/none.png" data-name="None" class="is-active">
+                                        <span>None</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="clear clear-32"></div>
+                            <!-- Beard -->
+                            <h6 class="attribute-header" onclick="toggleSection('beard-section')">Select a Beard Attribute</h6>
+                            <div id="beard-section" class="attribute-section">
+                                <div id="js-beard-options" class="bird-options">
+                                    <a href="/img/attributes/Facial-Hair/handlebars.png" class="bird-options-att macos-button">
+                                        <img src="/img/attributes/Facial-Hair/handlebars.png" data-name="Handlebars">
+                                        <span>Handlebars</span>
+                                    </a>
+                                    <a href="/img/attributes/Facial-Hair/mustache.png" class="bird-options-att macos-button">
+                                        <img src="/img/attributes/Facial-Hair/mustache.png" data-name="Mustache">
+                                        <span>Mustache</span>
+                                    </a>
+                                    <a href="/img/attributes/Facial-Hair/normal-beard-black.png" class="bird-options-att macos-button">
+                                        <img src="/img/attributes/Facial-Hair/normal-beard-black.png" data-name="Normal Beard Black">
+                                        <span>Normal Beard Black</span>
+                                    </a>
+                                    <a href="/img/attributes/Facial-Hair/normal-beard.png" class="bird-options-att macos-button">
+                                        <img src="/img/attributes/Facial-Hair/normal-beard.png" data-name="Normal Beard">
+                                        <span>Normal Beard</span>
+                                    </a>
+                                    <a href="/img/attributes/Facial-Hair/shadow-beard.png" class="bird-options-att macos-button">
+                                        <img src="/img/attributes/Facial-Hair/shadow-beard.png" data-name="Shadow Beard">
+                                        <span>Shadow Beard</span>
+                                    </a>
+                                    <a href="/img/attributes/none.png" class="bird-options-att macos-button">
+                                        <img src="/img/attributes/none.png" data-name="None" class="is-active">
+                                        <span>None</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="clear clear-32"></div>
+                            <!-- Mouth Property -->
+                            <h6 class="attribute-header" onclick="toggleSection('prop-section')">Select a Property Attributes</h6>
+                            <div id="prop-section" class="attribute-section">
+                                <div id="js-prop-options" class="bird-options">
+                                    <div id="js-male-prop-options" class="bird-options">
+                                        <a href="/img/attributes/Mouth-Property/cigarette.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Mouth-Property/cigarette.png" data-name="Cigarette">
+                                            <span>Cigarette M</span>
+                                        </a>
+                                        <a href="/img/attributes/Mouth-Property/pipe.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Mouth-Property/pipe.png" data-name="Pipe">
+                                            <span>Pipe M</span>
+                                        </a>
+                                    </div>
+                                    <div id="js-female-prop-options" class="bird-options">
+                                        <a href="/img/attributes/Mouth-Property/cigarette-female.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Mouth-Property/cigarette-female.png" data-name="Cigarette">
+                                            <span>Cigarette F</span>
+                                        </a>
+                                        <a href="/img/attributes/Mouth-Property/pipe-female.png" class="bird-options-att macos-button">
+                                            <img src="/img/attributes/Mouth-Property/pipe-female.png" data-name="Pipe">
+                                            <span>Pipe F</span>
+                                        </a>
+                                    </div>
+                                    <a href="/img/attributes/none.png" class="bird-options-att macos-button">
+                                        <img src="/img/attributes/none.png" data-name="None" class="is-active">
+                                        <span>None</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="clear clear-32"></div>
+
+                            <a href="#" id="js-generate" class="button macos-button center-text">Generate</a>
+                            <a href="#" id="js-download" class="button button-black macos-button center-text" download>Download</a>
+                            <div></div>
+                            <a href="#" id="js-reset" class="button macos-button center-text">Clear Canvas</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clear clear-32"></div>
+
+                <div id="response"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Site Footer -->
+    <footer class="footer macos-footer">
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <nav class="footer-nav">
+                        <ul class="menu">
+                            <li>
+                                <span class="copy">
+                                    2024 wannabeMiners. No Rights Reserved.
+                                </span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="column">
+                    <nav class="footer-nav">
+                        <ul class="menu text-right">
+                            <li>
+                                By <a href="https://twitter.com/the_cr00w" target="_blank">cr00w</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/main.js" type="text/javascript"></script>
+    <script>
+        function toggleSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section.style.display === "none" || section.style.display === "") {
+                section.style.display = "block";
+            } else {
+                section.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
